@@ -2,13 +2,15 @@
 
 This is intended to be an ANTLR4 grammar for DB2Z DSNUTILU, ADMIN_COMMAND_DSN and ADMIN_COMMAND_DB2 calls.
 
-I am heavily indebted to Craig Schneiderwent while building this ANTLR file. I used his github mapa project to build upon.
+I am heavily indebted to Craig Schneiderwent while building this ANTLR file. I used his https://github.com/cschneid-the-elder/mapa to build upon.
 However, all inconsistencies, flaws and irrational decisions, if any, are mine.
 
 Based on IBM DB2Z 12 syntax.
 
 The parser/lexer files are far from complete as compared to the endless possibilities IBM offers
-They only contain the now needed syntax. In the future, we will maybe make some additions.
+They only contain the now needed syntax. I probably need to make more additions in the near future.
+
+There are some TODO's in the code. These need to be addressed too.
 
 Martijn Rutte / opales@zonnet.nl
 

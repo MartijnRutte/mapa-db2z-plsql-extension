@@ -39,11 +39,6 @@ else
 	./src/tester $(n)
 endif
 
-jar:
-	echo `date` $@ >> build.log
-	jar cf DB2zPLSQL.jar -C class DB2zPLSQL*
-
-
 ./src/DB2zPLSQLLexer.tokens:
 
 ./src/DB2zPLSQLParser.tokens: ./src/DB2zPLSQLLexer.tokens

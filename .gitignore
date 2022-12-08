@@ -1,0 +1,6 @@
+build.log
+*/class/
+*/*/*.java
+*/*/*.interp
+*/*/*.tokens
+
