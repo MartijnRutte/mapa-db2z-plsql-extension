@@ -1,0 +1,4 @@
+-- ABEND not possible with DSN admin command, only free, bind, rebind
+-- This test should fail
+-- Disable for now, until sensible false path test implemented
+--CALL SYSPROC.ADMIN_COMMAND_DSN('ABEND', '');
