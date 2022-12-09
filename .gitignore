@@ -1,4 +1,4 @@
-build.log
+*build.log
 class/
 *.java
 *.interp
