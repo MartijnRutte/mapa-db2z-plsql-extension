@@ -55,17 +55,17 @@ fragment AMPERSAND
 	: '&';
 
 ADMIN_COMMAND_DSN
-	: C A L L ' ' S Y S P R O C '.' A D M I N '_' C O M M A N D '_' D S N
+	: A D M I N '_' C O M M A N D '_' D S N
 	->pushMode(ADMIN_COMMAND_DSN_MODE)
 	;
 
 ADMIN_COMMAND_DB2
-	: C A L L ' ' S Y S P R O C '.' A D M I N '_' C O M M A N D '_' D B '2'
+	: A D M I N '_' C O M M A N D '_' D B '2'
 	->pushMode(ADMIN_COMMAND_DB2_MODE)
 	;
 
 DSNUTILU
-	: C A L L ' ' S Y S P R O C '.' D S N U T I L U
+	: D S N U T I L U
 	->pushMode(DSNUTILU_MODE)
 	;
 
@@ -1280,6 +1280,10 @@ SYNONYM
 
 SYSDATE
 	: S Y S D A T E 
+	;
+
+SYSPROC
+	: S Y S P R O C
 	;
 
 SYSTEM

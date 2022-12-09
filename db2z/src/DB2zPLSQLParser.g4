@@ -27,7 +27,7 @@ startRule : (adminCmdDsn | adminCmdDb2 | dsnutilCall)* | EOF ;
 /* Begin of ADMIN_COMMAND and DSNUTILU section */ 
 
 adminCmdDsn
-	: ADMIN_COMMAND_DSN ADM_CMD_DSN_LPAREN ADM_CMD_DSN_SIMPLEQUOTE (bind|rebind|rebindTrigger|bindQuery|free) ADM_CMD_DSN_SIMPLEQUOTE ADM_CMD_DSN_COMMA admCmdDsnReturnCode ADM_CMD_DSN_RPAREN admCmdDsnTerminator NEWLINE?
+	: CALL SYSPROC DOT ADMIN_COMMAND_DSN ADM_CMD_DSN_LPAREN ADM_CMD_DSN_SIMPLEQUOTE (bind|rebind|rebindTrigger|bindQuery|free) ADM_CMD_DSN_SIMPLEQUOTE ADM_CMD_DSN_COMMA admCmdDsnReturnCode ADM_CMD_DSN_RPAREN admCmdDsnTerminator NEWLINE?
 	;
 
 admCmdDsnTerminator
@@ -558,7 +558,7 @@ continuation
 
 
 adminCmdDb2
-	: ADMIN_COMMAND_DB2 ADM_CMD_DB2_LPAREN ADM_CMD_DB2_SIMPLEQUOTE db2Commands ADM_CMD_DB2_SIMPLEQUOTE ADM_CMD_DB2_COMMA admCmdDb2CommandLength ADM_CMD_DB2_COMMA processingType ADM_CMD_DB2_COMMA db2Member ADM_CMD_DB2_COMMA commandsExecuted ADM_CMD_DB2_COMMA ifiReturnCode ADM_CMD_DB2_COMMA ifiReasonCode ADM_CMD_DB2_COMMA excessBytes ADM_CMD_DB2_COMMA groupIfiReasonCode ADM_CMD_DB2_COMMA groupExcessBytes ADM_CMD_DB2_COMMA admCmdDb2ReturnCode ADM_CMD_DB2_COMMA returnMsg ADM_CMD_DB2_RPAREN admCmdDb2Terminator NEWLINE?
+	: CALL SYSPROC DOT ADMIN_COMMAND_DB2 ADM_CMD_DB2_LPAREN ADM_CMD_DB2_SIMPLEQUOTE db2Commands ADM_CMD_DB2_SIMPLEQUOTE ADM_CMD_DB2_COMMA admCmdDb2CommandLength ADM_CMD_DB2_COMMA processingType ADM_CMD_DB2_COMMA db2Member ADM_CMD_DB2_COMMA commandsExecuted ADM_CMD_DB2_COMMA ifiReturnCode ADM_CMD_DB2_COMMA ifiReasonCode ADM_CMD_DB2_COMMA excessBytes ADM_CMD_DB2_COMMA groupIfiReasonCode ADM_CMD_DB2_COMMA groupExcessBytes ADM_CMD_DB2_COMMA admCmdDb2ReturnCode ADM_CMD_DB2_COMMA returnMsg ADM_CMD_DB2_RPAREN admCmdDb2Terminator NEWLINE?
 	;
 
 admCmdDb2Terminator
@@ -647,7 +647,7 @@ terminate
 
 /* Begin DSNUTILU parsing section */
 dsnutilCall
-	: DSNUTILU UTIL_LPAREN utilityId UTIL_COMMA restart UTIL_COMMA utStmts UTIL_COMMA returnCode UTIL_RPAREN utilTerminator NEWLINE?
+	: CALL SYSPROC DOT DSNUTILU UTIL_LPAREN utilityId UTIL_COMMA restart UTIL_COMMA utStmts UTIL_COMMA returnCode UTIL_RPAREN utilTerminator NEWLINE?
 	;
 
 utilTerminator
